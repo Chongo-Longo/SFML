@@ -1,0 +1,12 @@
+﻿  sample_shooting.cpp
+c:\cpp\samplegamestuff\samplegamestuff\sample_shooting.cpp(26): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+c:\cpp\samplegamestuff\samplegamestuff\sample_shooting.cpp(85): warning C4244: аргумент: преобразование "T" в "T", возможна потеря данных
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+  sampleGameStuff.vcxproj -> C:\CPP\sampleGameStuff\Debug\sampleGameStuff.exe

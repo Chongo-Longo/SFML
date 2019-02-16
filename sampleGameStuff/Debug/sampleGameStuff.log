@@ -1,12 +1,50 @@
-﻿  sample_shooting.cpp
-c:\cpp\samplegamestuff\samplegamestuff\sample_shooting.cpp(26): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
-c:\cpp\samplegamestuff\samplegamestuff\sample_shooting.cpp(85): warning C4244: аргумент: преобразование "T" в "T", возможна потеря данных
+﻿  space_shooter.cpp
+c:\cpp\samplegamestuff\samplegamestuff\space_shooter.cpp(30): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+c:\cpp\samplegamestuff\samplegamestuff\space_shooter.cpp(73): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+c:\cpp\samplegamestuff\samplegamestuff\space_shooter.cpp(197): warning C4244: аргумент: преобразование "double" в "T", возможна потеря данных
           with
           [
-              T=unsigned int
+              T=int
+          ]
+c:\cpp\samplegamestuff\samplegamestuff\space_shooter.cpp(197): warning C4244: аргумент: преобразование "T" в "T", возможна потеря данных
+          with
+          [
+              T=float
           ]
           and
           [
+              T=int
+          ]
+c:\cpp\samplegamestuff\samplegamestuff\space_shooter.cpp(196): warning C4244: аргумент: преобразование "const T" в "T", возможна потеря данных
+          with
+          [
               T=float
+          ]
+          and
+          [
+              T=int
+          ]
+c:\cpp\samplegamestuff\samplegamestuff\space_shooter.cpp(203): warning C4244: аргумент: преобразование "double" в "T", возможна потеря данных
+          with
+          [
+              T=int
+          ]
+c:\cpp\samplegamestuff\samplegamestuff\space_shooter.cpp(203): warning C4244: аргумент: преобразование "T" в "T", возможна потеря данных
+          with
+          [
+              T=float
+          ]
+          and
+          [
+              T=int
+          ]
+c:\cpp\samplegamestuff\samplegamestuff\space_shooter.cpp(202): warning C4244: аргумент: преобразование "const T" в "T", возможна потеря данных
+          with
+          [
+              T=float
+          ]
+          and
+          [
+              T=int
           ]
   sampleGameStuff.vcxproj -> C:\CPP\sampleGameStuff\Debug\sampleGameStuff.exe

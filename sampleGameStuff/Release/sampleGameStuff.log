@@ -1,15 +1,4 @@
-﻿  sample_shooting.cpp
-c:\cpp\samplegamestuff\samplegamestuff\sample_shooting.cpp(26): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
-c:\cpp\samplegamestuff\samplegamestuff\sample_shooting.cpp(85): warning C4244: аргумент: преобразование "T" в "T", возможна потеря данных
-          with
-          [
-              T=unsigned int
-          ]
-          and
-          [
-              T=float
-          ]
-  Создание кода
-  All 204 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
-  Создание кода завершено
-  sampleGameStuff.vcxproj -> C:\CPP\sampleGameStuff\Release\sampleGameStuff.exe
+﻿  space_shooter.cpp
+c:\cpp\samplegamestuff\samplegamestuff\space_shooter.cpp(41): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+sample_shooting.obj : error LNK2005: _main уже определен в sample_shooting.obj
+C:\CPP\sampleGameStuff\Release\sampleGameStuff.exe : fatal error LNK1169: обнаружен многократно определенный символ - один или более

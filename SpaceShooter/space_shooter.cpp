@@ -67,6 +67,7 @@ public:
 
 
 
+
 int main()
 {
 	srand(time(NULL));
@@ -77,6 +78,8 @@ int main()
 	//Font
 	Font font;
 	font.loadFromFile("Fonts/Fluxgore.otf");
+
+	
 
 	//Textures
 	Texture playerTex;
@@ -95,18 +98,23 @@ int main()
 	backgr.setPosition(0.f,0.f);
 	
 	//UI
+	Text startText;
+	startText.setFont(font);
+	startText.setCharacterSize(40);
+	startText.setPosition(window.getSize().x/2 - 60.f, window.getSize().y/2 - 70.f);
+	startText.setString("START");
+
+	Text exitText;
+	exitText.setFont(font);
+    exitText.setCharacterSize(40);
+	exitText.setPosition(window.getSize().x / 2 - 50.f, window.getSize().y / 2 - 20.f);
+	exitText.setString("EXIT");
+
 	Text scoreText;
 	scoreText.setFont(font);
 	scoreText.setCharacterSize(20);
 	scoreText.setFillColor(Color::White);
 	scoreText.setPosition(5.f,5.f);
-
-	Text startText;
-	startText.setFont(font);
-	startText.setCharacterSize(40);
-	startText.setColor(Color::White);
-
-
 
 	Text gameOverText;
 	gameOverText.setFont(font);
@@ -156,11 +164,20 @@ int main()
 	hit.setBuffer(bufferHit);
 	hit.setVolume(50.f);
 
-	
-	
+	//Intro
+	Music music;
+	music.openFromFile("Audio/intro.wav");
+	music.setLoop(true);
+
+	//Menu
+	bool isMenu = true;
+	int menuNum = 0;
+   
 
 	while (window.isOpen())
 	{
+		
+
 		Event event;
 		while (window.pollEvent(event))
 		{
@@ -168,13 +185,51 @@ int main()
 				window.close();
 		}
 
-		/*while (Mouse::getPosition(window).x > startText.getGlobalBounds().) {
-			window.draw(startText);
+		//MENU
+		while (isMenu)
+		{
+
+			startText.setFillColor(Color::White);
+			exitText.setFillColor(Color::White);
+			menuNum = 0;
+
+			if (IntRect(startText.getPosition().x, startText.getPosition().y,
+				startText.getGlobalBounds().width, startText.getGlobalBounds().height*1.5).contains(Mouse::getPosition(window))) {
+				startText.setFillColor(Color::Magenta);
+				menuNum = 1;
+			}
+
+			if (IntRect(exitText.getPosition().x, exitText.getPosition().y,
+				exitText.getGlobalBounds().width, exitText.getGlobalBounds().height*1.5).contains(Mouse::getPosition(window))) {
+				exitText.setFillColor(Color::Magenta);
+				menuNum = 2;
+			}
+
+			if (Mouse::isButtonPressed(Mouse::Left))
+			{
+				if (menuNum == 1) {
+					isMenu = false;
+					
+				}
+				if (menuNum == 2) {
+					isMenu = false;
+					window.close();
+				}
+			}
+			window.clear();
+
+			window.draw(backgr);
+			window.draw(startText); 
+			window.draw(exitText);
+			
+
+			window.display();
 		}
-		*/
+		
 		//UPDATE
 		if (player.HP > 0)
 		{
+			
 			//Player
 			if (Keyboard::isKeyPressed(Keyboard::W))
 				player.shape.move(0.f, -10.f);
@@ -302,7 +357,6 @@ int main()
 			window.draw(enemies[i].shape);
 		}
 		//UI
-		std::cout << player.HP;
 		window.draw(hpText);
 		window.draw(scoreText);
 		
